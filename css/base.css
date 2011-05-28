@@ -82,6 +82,28 @@ body {
     height: auto;
 }
 
+#ribbon-pane {
+    width: 930px;
+    height: 100px;
+    text-align: center;
+    vertical-align: top;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#login-form {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: top;
+    position: relative;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#FEF2B6');
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FEF2B6));
+    background: -moz-linear-gradient(top,  #FFFFFF,  #FEF2B6);
+}
+
+
+
 #menu {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#000000');
     background: -webkit-gradient(

@@ -1,5 +1,4 @@
 <?php
-
-require_once('./db.php', true);
+require_once('./db.php');
 validate_user("test", "test");
 ?>
