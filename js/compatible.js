@@ -3,11 +3,6 @@
  */
 $(document).ready(
 		function() {
-			$("#menu ul li").mouseover(function() {
-				$(this).addClass("over");
-			}).mouseout(function() {
-				$(this).removeClass("over");
-			});
 			if (navigator.userAgent.match(/Firefox/)) {
 				$("#menu ul li").css(
 						"padding-bottom",

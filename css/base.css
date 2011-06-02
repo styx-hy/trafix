@@ -73,7 +73,7 @@ body {
     height: auto;
 }
 
-#login {
+#login, #logout {
     padding: 15px;
     padding-right: 30px;
     text-align: left;

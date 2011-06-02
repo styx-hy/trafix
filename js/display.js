@@ -4,6 +4,13 @@
 
 $(document).ready(
 		function() {
+			// set highlight for menu items
+			$("#menu ul li").mouseover(function() {
+				$(this).addClass("over");
+			}).mouseout(function() {
+				$(this).removeClass("over");
+			});
+
 			$("#login span a").click(function() {
 				if ($("#ribbon-pane").css("display") == "block") {
 					$("#ribbon-pane").slideUp("normal", function() {
