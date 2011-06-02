@@ -3,11 +3,26 @@
         <span>Trafix Control Center</span>
     </div>
     <div id="login">
-        <span>Login</span>
+        <span><a href="javascript:void(0);">Login</a></span>
     </div>
 </div>
 <div id="ribbon-pane">
-    <div id="login-form"></div>
+    <div id="login-form">
+        <div id="msg"><span>Login to the system as system administrator</span></div>
+        <form id="info" method="post" action="action.php">
+            <div id="un">
+                <label for="username" style="padding-left: 5px;">Username:</label>
+                <input id="username" type="text" name="username">
+            </div>
+            <div id="pw">
+                <label for="password" style="padding-left: 5px;">Password:</label>
+                <input id="password" type="password" name="password">
+            </div>
+            <div id="bt">
+                <input id="post-requst" type="submit" name="submit">
+            </div>
+        </form>
+    </div>
 </div>
 <div id="menu">
     <ul>

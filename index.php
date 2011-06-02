@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="css/base.css">
         <script language="javascript" type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
         <script language="javascript" type="text/javascript" src="js/compatible.js"></script>
+        <script language="javascript" type="text/javascript" src="js/display.js"></script>
     </head>
     <body>
         <div id="wrapper" align="center">
