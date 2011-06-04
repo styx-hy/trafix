@@ -18,10 +18,33 @@ session_start();
     <head>
         <title>Administration</title>
         <link rel="stylesheet" type="text/css" href="css/base.css">
+        <link rel="stylesheet" type="text/css" href="css/admin.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.13.custom.mod.css">
         <script language="javascript" type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+        <script language="javascript" type="text/javascript" src="js/jquery-ui-1.8.13.custom.min.js"></script>
         <script language="javascript" type="text/javascript" src="js/compatible.js"></script>
         <script language="javascript" type="text/javascript" src="js/display.js"></script>
         <script language="javascript" type="text/javascript" src="js/interact.js"></script>
+<!--        <script language="javascript" type="text/javascript">-->
+<!--        $(document).ready(function() {-->
+<!--		$('#dialog').dialog({-->
+<!--			autoOpen: false,-->
+<!--			width: 600,-->
+<!--			buttons: {-->
+<!--				"Ok": function() { -->
+<!--					$(this).dialog("close"); -->
+<!--				}, -->
+<!--				"Cancel": function() { -->
+<!--					$(this).dialog("close"); -->
+<!--				} -->
+<!--			}-->
+<!--		});-->
+<!--		$('#manageDrvs').click(function() {-->
+<!--			$('#dialog').dialog('open');-->
+<!--			return false;-->
+<!--		});-->
+<!--        });-->
+<!--        </script>-->
     </head>
     <body>
         <div id="wrapper" align="center">
@@ -39,28 +62,29 @@ session_start();
                 <div id="menu">
                     <ul>
                         <li>
-                            <a href="javascript:void(0);">Notice</a>
+                            <a href="#" id="manageDrvs">Manage Drivers</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">Timetable</a>
+                            <a href="javascript:void(0);">Manage Vehicle</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">News Online</a>
+                            <a href="javascript:void(0);">Manage Routes</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">Ticket Booking</a>
+                            <a href="javascript:void(0);">General Diapatch</a>
                         </li>
                     </ul>
                 </div>
                 <div id="content">
-                    <div id="news">
-                         <div id="news-title">
+                    <div id="recent-op">
+                        <div id="recent-op-title">Recent Diapatch Operation
                         </div>
                     </div>
-                    <div id="intro">
-                        <div id="intro-title">
+                    <div id="overall-status">
+                        <div id="status-title">Overall Status
                         </div>
                     </div>
+                    <div id="dialog" title="Dialog Title" style="display: none;">I'm in a dialog</div>
                 </div>
             </div>
         </div>

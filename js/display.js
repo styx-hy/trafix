@@ -24,5 +24,21 @@ $(document).ready(
 					});
 				}
 			})
+			$('#dialog').dialog({
+                autoOpen: false,
+                width: 600,
+                buttons: {
+                    "Ok": function() { 
+                        $(this).dialog("close"); 
+                    }, 
+                    "Cancel": function() { 
+                        $(this).dialog("close"); 
+                    } 
+                }
+            });
+			$('#manageDrvs').click(function() {
+				$('#dialog').dialog('open');
+				return false;
+			});
 		});
 		

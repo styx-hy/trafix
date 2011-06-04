@@ -3,13 +3,17 @@ session_start();
 require_once('./db.php');
 
 switch ($_GET['action']) {
+	// use case for user login
     case 'login':
         if (validate_user($_POST['username'], $_POST['password'])) {
             $_SESSION['username'] = $_POST['username'];
             header("Location: admin.php");
         }
         break;
+    // when administrator logout
     case 'logout':
+    	
+    	// destroy whole session
         if (ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();
             setcookie(session_name(), '', time(),
