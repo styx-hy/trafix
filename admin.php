@@ -62,16 +62,16 @@ session_start();
                 <div id="menu">
                     <ul>
                         <li>
-                            <a href="#" id="manageDrvs">Manage Drivers</a>
+                            <a href="#" id="mgt-drv" class="menu-entry">Manage Drivers</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">Manage Vehicle</a>
+                            <a href="#" id="mgt-vhc" class="menu-entry">Manage Vehicle</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">Manage Routes</a>
+                            <a href="#" id="mgt-rts">Manage Routes</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">General Diapatch</a>
+                            <a href="#" id="mgt-dpt">General Diapatch</a>
                         </li>
                     </ul>
                 </div>
@@ -84,7 +84,7 @@ session_start();
                         <div id="status-title">Overall Status
                         </div>
                     </div>
-                    <div id="dialog" title="Dialog Title" style="display: none;">I'm in a dialog</div>
+                    <div id="dialog" title="lala" style="display: none;"></div>
                 </div>
             </div>
         </div>
