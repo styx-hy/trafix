@@ -10,7 +10,7 @@
 		    </tr>
 			<?php
 			require_once('./db.php');
-			$list = fetch_all('driver');
+			$list = fetch_page('driver', 0, 100);
 			foreach ($list as $entry) {
 				echo "<tr>";
                 echo "<td style='width: 5%'>"."<input type='checkbox' />"."</td>";

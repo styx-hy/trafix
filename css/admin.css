@@ -62,7 +62,7 @@
     width: 75%;
 }
 
-#entries, #entries * {
+#entries, #entries table * {
     border: 1px solid;
     text-align: left;
 }
