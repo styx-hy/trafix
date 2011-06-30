@@ -41,4 +41,18 @@ function fetch_all($entity) {
 	return $drv_list;
 }
 
+// get one route info by route_id
+function getRouteById($route_id) {
+    $con = mysql_connect(HOST, USER, PSWD);
+    if (!isset($con)) {
+        die("cannot connect to database");
+    }
+
+    mysql_select_db(DB, $con);
+    $query = "SELECT * FROM route WHERE route_id = ".$route_id;
+    $result = mysql_query($query);
+    $info = mysql_fetch_array($result, MYSQL_ASSOC);
+    return $info;
+}
+
 ?>

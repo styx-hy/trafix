@@ -29,6 +29,7 @@ $(document).ready(
 			// set configuration dialog box
 			$('#dialog').dialog({
                 autoOpen: false,
+                height: 450,
                 width: 600,
                 buttons: {
                     "Ok": function() { 
@@ -50,11 +51,11 @@ $(document).ready(
 				return false;
 			});
 			$('#mgt-rts').click(function() {
-				$('#dialog').load("mgt-rts.html").dialog("option", "title", 'Manage Routes').dialog('open');
+				$('#dialog').load("mgt-rts.php").dialog("option", "title", 'Manage Routes').dialog('open');
 				return false;
 			});
 			$('#mgt-dpt').click(function() {
-				$('#dialog').load("mgt-dpt.html").dialog("option", "title", 'General Dispatch').dialog('open');
+				$('#dialog').load("mgt-dpt.php").dialog("option", "title", 'General Dispatch').dialog('open');
 				return false;
 			});
 			

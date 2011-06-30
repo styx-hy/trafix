@@ -71,13 +71,13 @@ session_start();
                             <a href="#" id="mgt-rts">Manage Routes</a>
                         </li>
                         <li>
-                            <a href="#" id="mgt-dpt">General Diapatch</a>
+                            <a href="#" id="mgt-dpt">General Dispatch</a>
                         </li>
                     </ul>
                 </div>
                 <div id="content">
                     <div id="recent-op">
-                        <div id="recent-op-title">Recent Diapatch Operation
+                        <div id="recent-op-title">Recent Dispatch Operation
                         </div>
                     </div>
                     <div id="overall-status">

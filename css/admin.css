@@ -49,8 +49,35 @@
     height: 30px;
 }
 
-#drv-list {
+/* Driver Management */
+
+#entry-table {
 	float: left;
 	height: 60px;
-	width: 100px;
+	width: 550px;
+}
+
+#entries {
+    float: left;
+    width: 75%;
+}
+
+#entries, #entries * {
+    border: 1px solid;
+    text-align: left;
+}
+
+#entries tr td {
+    width: 20%;
+}
+
+#btn_group {
+    margin-left: 10px;
+    float: left;
+    width: 20%;
+}
+
+.op_btn {
+    margin-bottom: 10px;
+    width: 100%;
 }
