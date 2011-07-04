@@ -4,7 +4,7 @@ require_once('./db-conf.php');
 
 // retrive fields(attributes) of a particular table
 // to get the general description of a table
-function getTableDesc($table) {
+function _getTableDesc($table) {
     $con = mysql_connect(HOST, USER, PSWD);
     if (!isset($con)) {
         die("cannot connect to database");
@@ -43,7 +43,7 @@ function validate_user($username, $password) {
 }
 
 // retrive all drivers
-function fetch_all($entity) {
+function get_all($entity) {
 	$con = mysql_connect(HOST, USER, PSWD);
 	if (!isset($con)) {
 		die("cannot connect to database");
@@ -83,7 +83,7 @@ function del_entry($id, $id_attr, $table) {
 	mysql_close($con);
 }
 
-function fetch_page($entity, $start_num, $page_num) {
+function get_page($entity, $start_num, $page_num) {
 	$con = mysql_connect(HOST, USER, PSWD);
 	if (!isset($con)) {
 		die("cannot connect to database");
@@ -100,7 +100,7 @@ function fetch_page($entity, $start_num, $page_num) {
 }
 
 // get one route info by route_id
-function getRouteById($route_id) {
+function get_route_by_id($route_id) {
     $con = mysql_connect(HOST, USER, PSWD);
     if (!isset($con)) {
         die("cannot connect to database");
@@ -112,6 +112,30 @@ function getRouteById($route_id) {
     $info = mysql_fetch_array($result, MYSQL_ASSOC);
     mysql_close($con);
     return $info;
+}
+
+function assign_drv2vhc($driver, $vehicle) {
+	$con = mysql_connect(HOST, USER, PSWD);
+    if (!isset($con)) {
+        die("cannot connect to database");
+    }
+
+    mysql_select_db(DB, $con);
+    $query = sprintf("INSERT INTO drive VALUE (%d, %d)", $driver, $vehicle);
+    $result = mysql_query($query);
+	return mysql_affected_rows($con);
+}
+
+function assign_vhc2rts($vehicle, $route) {
+	$con = mysql_connect(HOST, USER, PSWD);
+    if (!isset($con)) {
+        die("cannot connect to database");
+    }
+
+    mysql_select_db(DB, $con);
+    $query = sprintf("INSERT INTO assign VALUE (%d, %d)", $vehicle, $route);
+    $result = mysql_query($query);
+    return mysql_affected_rows($con);
 }
 
 ?>

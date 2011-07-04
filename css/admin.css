@@ -59,16 +59,24 @@
 
 #entries {
     float: left;
-    width: 75%;
+    width: 400px;
 }
 
-#entries, #entries table * {
+#entries, #entries * {
     border: 1px solid;
     text-align: left;
 }
 
+/*
 #entries tr td {
     width: 20%;
+    overflow: hidden;
+}
+*/
+
+.cell {
+	width: 100px;
+	overflow: hidden;
 }
 
 #btn_group {

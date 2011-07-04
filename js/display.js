@@ -43,19 +43,19 @@ $(document).ready(
 			
 			// action for each use case
 			$('#mgt-drv').click(function() {
-				$('#dialog').load("mgt-drv.php").dialog("option", "title", 'Manage Drivers').dialog('open');
+				$('#dialog').load("tmpl.php", {target: "mgt-drv.php"}).dialog("option", "title", 'Manage Drivers').dialog('open');
 				return false;
 			});
 			$('#mgt-vhc').click(function() {
-				$('#dialog').load("mgt-vhc.php").dialog("option", "title", 'Manage Vehicle').dialog('open');
+				$('#dialog').load("tmpl.php", {target: "mgt-vhc.php"}).dialog("option", "title", 'Manage Vehicle').dialog('open');
 				return false;
 			});
 			$('#mgt-rts').click(function() {
-				$('#dialog').load("mgt-rts.php").dialog("option", "title", 'Manage Routes').dialog('open');
+				$('#dialog').load("tmpl.php", {target: "mgt-rts.php"}).dialog("option", "title", 'Manage Routes').dialog('open');
 				return false;
 			});
 			$('#mgt-dpt').click(function() {
-				$('#dialog').load("mgt-dpt.php").dialog("option", "title", 'General Dispatch').dialog('open');
+				$('#dialog').load("tmpl.php", {target: "mgt-dpt.php"}).dialog("option", "title", 'General Dispatch').dialog('open');
 				return false;
 			});
 			
@@ -65,4 +65,3 @@ $(document).ready(
 				$(this).removeClass("over");
 			});
 		});
-		
