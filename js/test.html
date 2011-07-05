@@ -2,30 +2,19 @@
   <head>
     <script language="javascript" type="text/javascript" src="jquery-1.6.1.min.js"></script>
     <script language="javascript" type="text/javascript" src="jquery-ui-1.8.13.custom.min.js"></script>
-    <script type="text/javascript">
-      // Dialog           
-                $('#dialog').dialog({
-                    autoOpen: false,
-                    width: 600,
-                    buttons: {
-                        "Ok": function() { 
-                            $(this).dialog("close"); 
-                        }, 
-                        "Cancel": function() { 
-                            $(this).dialog("close"); 
-                        } 
-                    }
-                });
-                
-                // Dialog Link
-                $('#dialog_link').click(function(){
-                    $('#dialog').dialog();
-                    return false;
-                });
-    </script>
   </head>
   <body>
     <a href="#" id="dialog_link">asdf</a>
-    
+    <input name="test1" class="someinput" type="text">
+    <input name="test2" class="someinput" type="text">
+    <button id="button" type="button"></button>
+    <script type="text/javascript">
+    $('#button').click(function() {
+		var inputs = $('.someinput');
+		for (var i = 0; i < inputs.length; i++) {
+			alert(inputs[i].name);
+		}
+    </script>
+  
   </body>
 </html>
