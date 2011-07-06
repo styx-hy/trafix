@@ -80,8 +80,17 @@
 		$('#addnew').click(function() {
 			var all_inputs = $('.new_input');
 			var get_data = {};
+			var k = 0;
 			for (var i = 0; i < all_inputs.length; i++) {
-				get_data[i] = "'" + all_inputs[i].value + "'";
+				alert(all_inputs[i].value);
+				if (all_inputs[i].value != '') {
+					if (isNaN(all_inputs[i].value)) {
+						get_data[k] = [all_inputs[i].name, "'" + all_inputs[i].value + "'"];
+					} else {
+						get_data[k] = [all_inputs[i].name, all_inputs[i].value];
+					}
+					k++;
+				}
 			}
 			$.ajax({
 				url: "action.php",

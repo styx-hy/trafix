@@ -12,8 +12,9 @@
     $('#button').click(function() {
 		var inputs = $('.someinput');
 		for (var i = 0; i < inputs.length; i++) {
-			alert(inputs[i].name);
+			alert(isNaN(inputs[i].value));
 		}
+		});
     </script>
   
   </body>

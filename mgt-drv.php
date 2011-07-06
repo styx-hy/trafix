@@ -28,7 +28,7 @@ foreach ($list as $entry) {
 }
 echo "<tr><td></td>";
 echo "<td><input class=\"new_input\" type=\"text\" name=\"name\" style=\"width: 150px;\"></td>";
-echo "<td><input class=\"new_input\" type=\"text\" name=\"age\" style=\"width: 50px;\"></td>";
+echo "<td><input class=\"new_input\" type=\"text\" name=\"drive_age\" style=\"width: 50px;\"></td>";
 echo "<td><input class=\"new_input\" type=\"text\" name=\"assigned\" style=\"width: 50px;\"></td>";
 echo "</table>";
 }

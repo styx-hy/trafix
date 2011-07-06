@@ -59,16 +59,25 @@ function get_all($entity) {
 	return $drv_list;
 }
 
-function add_new($table, $values) {
+function add_new($table, $data) {
 	$con = mysql_connect(HOST, USER, PSWD);
 	if (!isset($con)) {
 		die("cannot connect to database");
 	}
-
+	foreach ($data as $pair) {
+		$fields[] = $pair[0];
+		$values[] = $pair[1];
+	}
 	mysql_select_db(DB, $con);
-	$query = sprintf("INSERT INTO %s values (%s)", $table, join(',', $values));
+	$query = sprintf("INSERT INTO %s (%s) values (%s)", $table, join(',', $fields), join(',', $values));
 	$result = mysql_query($query);
-	mysql_close($con);
+	if (mysql_affected_rows($con) == -1) {
+		mysql_close($con);
+		return false;
+	} else {
+		mysql_close($con);
+		return true;
+	}
 }
 
 function del_entry($id, $id_attr, $table) {

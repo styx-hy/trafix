@@ -25,14 +25,15 @@ switch ($_GET['action']) {
         header("Location: index.php");
         break;
     case 'add':
-    	foreach ($_GET['data'] as $field) {
-    		if (is_numeric($field)) {
-    			$field = (int)$field;
-    			echo $field;
-    		}
-    	}
-    	add_new($_GET['table'], $_GET['data']);
-    	print_r($_GET['data']);
+    	$status = add_new($_GET['table'], $_GET['data']);
+		if ($status) {
+			header("HTTP/1.1 200 OK");
+			echo $status;
+		} else {
+			header("HTTP/1.1 404 Not Found");
+		}
+		// echo $query;
+    	// print_r($_GET['data']);
     default: break;
 }
 #echo session_id();
