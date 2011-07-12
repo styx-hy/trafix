@@ -57,12 +57,12 @@
 	width: 550px;
 }
 
-#entries {
+#entries, .infotable {
     float: left;
     width: 400px;
 }
 
-#entries, #entries * {
+#entries, #entries *, .infotable * {
     border: 1px solid;
     text-align: left;
 }

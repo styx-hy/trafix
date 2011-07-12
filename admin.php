@@ -1,18 +1,5 @@
 <?php
 session_start();
-#echo session_id();
-#echo ini_get("session.use_cookies");
-#print_r( session_get_cookie_params());
-#print_r(session_name());
-#echo time();
-#if (ini_get("session.use_cookies")) {
-#    $params = session_get_cookie_params();
-#    setcookie(session_name(), '', time(),
-#        $params["path"], $params["domain"],
-#        $params["secure"], $params["httponly"]
-#    );
-#}
-#session_destroy();
 ?>
 <html>
     <head>
@@ -25,26 +12,6 @@ session_start();
         <script language="javascript" type="text/javascript" src="js/compatible.js"></script>
         <script language="javascript" type="text/javascript" src="js/display.js"></script>
         <script language="javascript" type="text/javascript" src="js/interact.js"></script>
-<!--        <script language="javascript" type="text/javascript">-->
-<!--        $(document).ready(function() {-->
-<!--		$('#dialog').dialog({-->
-<!--			autoOpen: false,-->
-<!--			width: 600,-->
-<!--			buttons: {-->
-<!--				"Ok": function() { -->
-<!--					$(this).dialog("close"); -->
-<!--				}, -->
-<!--				"Cancel": function() { -->
-<!--					$(this).dialog("close"); -->
-<!--				} -->
-<!--			}-->
-<!--		});-->
-<!--		$('#manageDrvs').click(function() {-->
-<!--			$('#dialog').dialog('open');-->
-<!--			return false;-->
-<!--		});-->
-<!--        });-->
-<!--        </script>-->
     </head>
     <body>
         <div id="wrapper" align="center">
@@ -77,11 +44,26 @@ session_start();
                 </div>
                 <div id="content">
                     <div id="recent-op">
-                        <div id="recent-op-title">Recent Dispatch Operation
+                        <div id="recent-op-title">Overall Status
+                        </div>
+                        <div id="status">
+                        	<script type="text/javascript">
+                        		$('#status').load("assign_status.php");
+                        	</script>
+                        </div>
+                        <div id="popdes">
+                        	<script type="text/javascript">
+                        		$('#popdes').load("pop_des.php");
+                        	</script>
                         </div>
                     </div>
                     <div id="overall-status">
-                        <div id="status-title">Overall Status
+                        <div id="status-title">Recent Dispatch Operation
+                        </div>
+                        <div id="Coach status">
+                        	<script type="text/javascript">
+                        		$('#status-title').load("avl_status.php");
+                        	</script>
                         </div>
                     </div>
                     <div id="dialog" title="lala" style="display: none;"></div>

@@ -18,16 +18,18 @@ if (count($list) == 0) {
 	<td>Age</td>
 	<td>Repair</td>
 	<td>Seats</td>
+	<td>Available?</td>
 	</tr>
 <?php	
 foreach ($list as $entry) {
     echo "<tr>";
 	echo "<td style='width: 5%'>"."<input type='checkbox' />"."</td>";
-	echo "<td>".$entry['coach_id']."</td>";
+	echo "<td style='width: 5%'>".$entry['coach_id']."</td>";
 	echo "<td>".$entry['type']."</td>";
 	echo "<td>".$entry['age']."</td>";
 	echo "<td>".$entry['repair']."</td>";
 	echo "<td>".$entry['seat']."</td>";
+	echo "<td>".$entry['avl']."</td>";
 	echo "</tr>";
 }
 echo "<tr><td></td>";
@@ -36,6 +38,7 @@ echo "<td><input class=\"new_input\" type=\"text\" name=\"type\" style=\"width: 
 echo "<td><input class=\"new_input\" type=\"text\" name=\"age\" style=\"width: 50px;\"></td>";
 echo "<td><input class=\"new_input\" type=\"text\" name=\"repair\" style=\"width: 50px;\"></td>";
 echo "<td><input class=\"new_input\" type=\"text\" name=\"seat\" style=\"width: 50px;\"></td>";
+echo "<td><input class=\"new_input\" type=\"text\" name=\"avl\" style=\"width: 50px;\"></td>";
 echo "</table>";
 
 }

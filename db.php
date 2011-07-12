@@ -142,9 +142,87 @@ function assign_vhc2rts($vehicle, $route) {
     }
 
     mysql_select_db(DB, $con);
+	mysql_query("START TRANSACTION");
     $query = sprintf("INSERT INTO assign VALUE (%d, %d)", $vehicle, $route);
     $result = mysql_query($query);
     return mysql_affected_rows($con);
 }
 
+function route_status() {
+	$con = mysql_connect(HOST, USER, PSWD);
+    if (!isset($con)) {
+        die("cannot connect to database");
+    }
+
+    mysql_select_db(DB, $con);
+    mysql_query("START TRANSACTION");
+    $query = "CALL route_assign";
+	mysql_query($query);
+	$query = "SELECT * FROM routeassign LIMIT 5";
+	$result = mysql_query($query);
+	if (mysql_errno()) {
+		mysql_query("ROLLBACK");
+		mysql_close($con);
+		return false;
+	} else {
+		while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+			$set[] = $row;
+		}
+		mysql_close($con);
+		mysql_query("COMMIT");
+		return $set;
+	}
+}
+
+function pop_des() {
+	$con = mysql_connect(HOST, USER, PSWD);
+    if (!isset($con)) {
+        die("cannot connect to database");
+    }
+
+    mysql_select_db(DB, $con);
+	mysql_query("START TRANSACTION");
+	$query = "CALL pop_des";
+	mysql_query($query);
+	$query = "SELECT * FROM popdes LIMIT 10";
+	$result = mysql_query($query);
+	if (mysql_errno()) {
+		mysql_query("ROLLBACK");
+		mysql_close($con);
+		return false;
+	} else {
+		while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+			$set[] = $row;
+		}
+		mysql_close($con);
+		mysql_query("COMMIT");
+		return $set;
+	}
+}
+
+function avl_coach() {
+	$con = mysql_connect(HOST, USER, PSWD);
+    if (!isset($con)) {
+        die("cannot connect to database");
+    }
+
+    mysql_select_db(DB, $con);
+	$result = mysql_query("SELECT COUNT(*) FROM coach WHERE avl = 1");
+	$avl_count = mysql_fetch_array($result, MYSQL_NUM);
+	mysql_close($con);
+	return $avl_count;
+}
+
+function not_avl_coach() {
+	$con = mysql_connect(HOST, USER, PSWD);
+    if (!isset($con)) {
+        die("cannot connect to database");
+    }
+
+    mysql_select_db(DB, $con);
+	$result = mysql_query("SELECT COUNT(*) FROM coach WHERE avl = 0");
+	$not_avl_count = mysql_fetch_array($result, MYSQL_NUM);
+	mysql_close($con);
+	return $not_avl_count;
+}
 ?>

@@ -1,4 +1,4 @@
-<div><p id='gaga'>Driver Management</p></div>
+<div><p id='gaga'></p></div>
 <div class="dialog_content">
 	<div id="entry-table">
 		<div id="mgt">
